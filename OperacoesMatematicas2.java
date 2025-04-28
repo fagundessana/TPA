@@ -87,11 +87,14 @@ public class OperacoesMatematicas2 {
         return PI * raio * raio;
     }
     
-    public static double mediaAritmetica(int[] valores) {
-        int soma = 0;
-        for (int valor : valores) {
-            soma += valor;
-        }
-        return (double) soma / valores.length;
+   public static double mediaAritmetica(int[] valores) {
+    int soma = 0;
+    for (int valor : valores) {
+        soma += valor;
     }
+    if (valores.length == 0) {
+        return 0;
+    }
+    return (double) soma / valores.length;
 }
+    
