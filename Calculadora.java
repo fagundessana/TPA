@@ -1,5 +1,6 @@
 package com.mycompany.scannerexample;
 
+//importei a classe scanner e a locale para padronizar a resposta dos caracteres
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -7,8 +8,9 @@ public class Calculadora {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        boolean continuar;
+        boolean continuar;//Responsável por controlar o fluxo do loop
         
+        // Aqui é pedido os números para a realização da operação
         do {
             System.out.println("Digite o num1");
             int num1 = scanner.nextInt();
@@ -27,14 +29,15 @@ public class Calculadora {
         
         scanner.close();
     }
-
+     
+    //O loop se inicia aqui, perguntando se o usuário deseja fazer uma nova operação
     public static boolean verificarNovaOperacao(Scanner scanner) {
         System.out.println("Deseja realizar uma nova operacao? (SIM ou NAO):");
-        // Consumir a quebra de linha pendente
         scanner.nextLine();
         return !scanner.nextLine().toUpperCase(Locale.ROOT).equals("NAO");
     }
 
+    //Aqui ocorre a realização dos cálculos
     public static int calcular(int n1, int n2, String operacao) {
         int respostaCalculo = 0;
         
@@ -53,16 +56,16 @@ public class Calculadora {
                 
             case "/":
                 if (n2 == 0) {
-                    System.out.println("Erro: Divisão por zero!");
+                    System.out.println("Erro: Divisão por zero!");//mensagem de erro, pois é uma divisão por zero
                     return 0; 
                 }
                 respostaCalculo = n1 / n2;
                 break;
                 
             default:
-                System.out.println("Operação inválida =(");
+                System.out.println("Operação inválida =(");//mensagem de erro
         }
-        
+        //E aqui retorna o resultado do cálculo
         return respostaCalculo;
     }
 }
