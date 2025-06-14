@@ -42,28 +42,28 @@ public class Calculadora {
         int respostaCalculo = 0;
         
         switch (operacao) {
-            case "+":
+            case "+": //adição
                 respostaCalculo = n1 + n2;
                 break;
                 
-            case "-":
+            case "-": //subtração
                 respostaCalculo = n1 - n2;
                 break;
                 
-            case "*":
+            case "*": //multiplicação
                 respostaCalculo = n1 * n2;
                 break;
                 
-            case "/":
+            case "/": //divisão
                 if (n2 == 0) {
                     System.out.println("Erro: Divisão por zero!");//mensagem de erro, pois é uma divisão por zero
                     return 0; 
                 }
-                respostaCalculo = n1 / n2;
+                respostaCalculo = n1 / n2; //resposta do cálculo
                 break;
                 
             default:
-                System.out.println("Operação inválida =(");//mensagem de erro
+                System.out.println("Operação inválida =(");//mensagem de erro quando a operação inválida
         }
         //E aqui retorna o resultado do cálculo
         return respostaCalculo;
