@@ -1,5 +1,5 @@
 package com.mycompany.primechecker;
-
+//importei a classe scanner e a locale para padronizar a resposta dos caracteres
 import java.util.Scanner;
 import java.util.Locale;
 
@@ -10,7 +10,7 @@ public class PrimeChecker {
         boolean continuar;
 
         do {
-            System.out.print("\nDigite um numero inteiro positivo: ");
+            System.out.print("\nDigite um numero inteiro positivo: ");//pede para inserir um número inteiro positivo
             int numero = scanner.nextInt();
             
             if (numero < 2) {
@@ -27,7 +27,7 @@ public class PrimeChecker {
     }
 
     public static boolean verificarPrimo(int numero) {
-        // Otimização: verificar divisores até a raiz quadrada do número
+        //verifica divisores até a raiz quadrada do número
         for (int i = 2; i <= Math.sqrt(numero); i++) {
             if (numero % i == 0) {
                 return false;
@@ -37,8 +37,8 @@ public class PrimeChecker {
     }
 
     public static boolean verificarNovaVerificacao(Scanner scanner) {
-        System.out.print("\nDeseja verificar outro numero? (SIM ou NAO): ");
-        scanner.nextLine(); // Limpar buffer
+        System.out.print("\nDeseja verificar outro numero? (SIM ou NAO): ");//exibe essa mensagem ao usuário
+        scanner.nextLine(); 
         return !scanner.nextLine().toUpperCase(Locale.ROOT).equals("NAO");
     }
 }
